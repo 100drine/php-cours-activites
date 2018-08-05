@@ -111,17 +111,18 @@ echo '<br><br>';
 //Créer un tableau pour les mois de l'année et affiché tous les mois de Janvier à Décembre
 //modifier et/ou remplacer les éléments ci-dessous
 echo "8.Les mois depuis le debut de l'annee : <br>";
-$mois = [];
-for ($i = 0; $i < 0; $i) {
-    echo '';
+$mois = ['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
+for ($i = 0; $i <=11; $i++) {
+    echo $mois [$i];
 }
 echo '<br><br>';
 
 //Afficher les mois de la fin de l'année jusqu'au début de l'année
 //modifier et/ou remplacer les éléments ci-dessous
 echo "9.Les mois depuis la fin de l'annee : <br>";
-for ($i = 0; $i < 0; $i) {
-    echo '';
+$mois =['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
+for ($i = 11; $i >= 0; $i--) {
+    echo $mois [$i];
 }
 echo '<br><br>';
 //----------------------------------------
@@ -148,14 +149,30 @@ $college = array(
 );
 
 echo '10.Les eleves du college : <br>';
-//ajoutez votre code ici
+foreach ($college as $prenom => $eleve){
+  foreach ($eleve as $propriete => $valeur){
+  foreach ($valeur as $nom => $eleve2){
+  echo $eleve2.' ';  
+  };
+  };
+  };
 echo '<br><br>';
 
 //----------------------------------------
 //Afficher le nom et prénoms des élèves de ce collège
 //reprenez le tableau ci-dessus, ajoutez des éléves pour la classe de troisième et réaffichez tout
 echo '11.Les eleves du college (avec les nouveaux arrivants): <br>';
-//ajoutez votre code ici
+$college2 = array(
+  'troisieme'=> array(
+    array('Nom'=> 'Mouse', 'Prenom' => 'Mickey'),
+    array('Nom'=> 'Duck', 'Prenom' => 'Donald'),
+    array('Nom'=> 'Bunny', 'Prenom' => 'Bugs'),
+    array('Nom'=> 'Mouse', 'Prenom' => 'Minnie'),
+  ),
+);
+array_push($college,$college2);
+
+var_dump($college);
 echo '<br><br>';
 
 //----------------------------------------
@@ -196,7 +213,7 @@ $videotheque = array(
 );
 
 echo '12.Mes films : <br>';
-//ajoutez votre code ici
+var_dump($videotheque);
 echo '<br><br>';
 
 //----------------------------------------
@@ -206,5 +223,43 @@ echo '<br><br>';
 //rajoutez un synopsis
 
 echo '13.Mes films : <br>';
-//ajoutez votre code ici
+$videotheque2 = array(
+  array(
+    'nom'=> 'Shizo',
+    'date'=> '2018',
+    'realisateur'=> 'Gulshat Omarova',
+    'acteurs'=> array('Olzhas Nusupbaev','Eduard Tabyschev',
+    'synopsis'=> "La force de ce film, c'est un scénario qui colle à son héros, cet adolescent silencieux,
+    au reard aigu. Ici tout tient dans les détails, celui d'une pomme qui roule, d'un poisson séché,
+    de la blondeur d'une fille, de combats de boxe à mains nues sur le bitume...Tous ces éléments plus 
+    les plaines de son pays, et quelques humains à l'intérieur, rendent ce film unique, original.",
+  ),
+  ),
+  array(
+    'nom'=> 'Shizo2',
+    'date'=> '2018',
+    'realisateur'=> 'Gulshat Omarova',
+    'acteurs'=> array('Olzhas Nusupbaev','Eduard Tabyschev',
+    'synopsis'=> "La force de ce film, c'est un scénario qui colle à son héros, cet adolescent silencieux,
+    au reard aigu. Ici tout tient dans les détails, celui d'une pomme qui roule, d'un poisson séché,
+    de la blondeur d'une fille, de combats de boxe à mains nues sur le bitume...Tous ces éléments plus 
+    les plaines de son pays, et quelques humains à l'intérieur, rendent ce film unique, original.",
+  ),
+  ),
+  array(
+    'nom'=> 'Shizo3',
+    'date'=> '2018',
+    'realisateur'=> 'Gulshat Omarova',
+    'acteurs'=> array('Olzhas Nusupbaev','Eduard Tabyschev',
+    'synopsis'=> "La force de ce film, c'est un scénario qui colle à son héros, cet adolescent silencieux,
+    au reard aigu. Ici tout tient dans les détails, celui d'une pomme qui roule, d'un poisson séché,
+    de la blondeur d'une fille, de combats de boxe à mains nues sur le bitume...Tous ces éléments plus 
+    les plaines de son pays, et quelques humains à l'intérieur, rendent ce film unique, original.",
+  ),
+  ),
+);
+
+array_push($videotheque,$videotheque2);
+var_dump($videotheque);
 echo '<br><br>';
+
